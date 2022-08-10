@@ -2,8 +2,8 @@ To see the Prototype:-
 
 The applications' prototypes were made using a cloud prototyping tool called balsamiq.
 
-Emailer:- https://share.balsamiq.com/c/tb1wvXCv34paNNbjhnYZpv.png
-Landing Page:- https://share.balsamiq.com/c/n6zg5LoeCKgNQm6XAEBPSp.png
+1. Emailer:- https://share.balsamiq.com/c/tb1wvXCv34paNNbjhnYZpv.png
+2. Landing Page:- https://share.balsamiq.com/c/n6zg5LoeCKgNQm6XAEBPSp.png
 
 
 To Run Locally:-
@@ -17,5 +17,6 @@ To Run Locally:-
 6. Response and error will be displayed using ngx-toastr
 
 To Run In Production:-
-The app has been deployed on heroku using CI/CD pipeline.
+1. The app has been deployed on heroku using CI/CD pipeline.
 https://gi-app-hosting.herokuapp.com/#/emailer
+2. To See the saved date as json please hit https://gi-app-hosting.herokuapp.com/contacts
