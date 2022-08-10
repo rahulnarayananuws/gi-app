@@ -1,27 +1,21 @@
-# GiApp
+To see the Prototype:-
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+The applications' prototypes were made using a cloud prototyping tool called balsamiq.
 
-## Development server
+Emailer:- https://share.balsamiq.com/c/tb1wvXCv34paNNbjhnYZpv.png
+Landing Page:- https://share.balsamiq.com/c/n6zg5LoeCKgNQm6XAEBPSp.png
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+To Run Locally:-
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. clone the project git clone https://github.com/rahulnarayananuws/gi-app.git
+2. After cloning the project, Go inside Gi-app and run npm i to install the dependencies.
+3. Run ng s --o to serve the aplication.
+4. A fake server named json-server has been used to spoof the server, to run json-server run command json-server --watch db.json (inside gi-app). The data will be stored in db.json.
+4. Hashed strategy has been used while routing, so use http://localhost:4200/#/emailer for the emailer page.
+5. Click on the Get Quote Button to redirect the control to landing page which collects the data from the user (http://localhost:4200/#/landing)
+6. Response and error will be displayed using ngx-toastr
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To Run In Production:-
+The app has been deployed on heroku using CI/CD pipeline.
+https://gi-app-hosting.herokuapp.com/#/emailer
