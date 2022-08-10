@@ -3,7 +3,7 @@ const server = jsonServer.create()
 const router = jsonServer.router('db.json')
 
 const middlewares = jsonServer.defaults({
-    static:'./dist/gi-app/index.html'
+    static:'./dist/gi-app'
 })
 
 server.use(middlewares)
