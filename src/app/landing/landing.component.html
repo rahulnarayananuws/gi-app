@@ -1,0 +1,64 @@
+<div class="content">
+    <div class="container">
+        <div class="row align-items-stretch justify-content-center no-gutters">
+            <div class="col-md-7">
+                <div class="form h-100 contact-wrap p-5">
+                    <h3 class="text-center">Get a Quote</h3>
+                    <form class="mb-5" [formGroup]="contactForm">
+                        <div class="row">
+                            <div class="col-md-6 form-group mb-3">
+                                <label for="" class="col-form-label">Name *</label>
+                                <input type="text" class="form-control" name="name" id="name" formControlName="name"
+                                    placeholder="Your name" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+                                <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['name'].errors['required']">Name is required</div>
+                                    <div *ngIf="f['name'].errors['minlength']">Min 3 Characters</div>
+                                    <div *ngIf="f['name'].errors['maxlength']">Max 10 Characters</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 form-group mb-3">
+                                <label for="" class="col-form-label">Email *</label>
+                                <input type="email" class="form-control" name="email" id="email" formControlName="email"
+                                    placeholder="Your email"
+                                    [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                                <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['email'].errors['required']">Email is required</div>
+                                    <div *ngIf="f['email'].errors['email']">Email is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group mb-3">
+                                <label for="budget" class="col-form-label">Subject</label>
+                                <input type="text" class="form-control" name="subject" id="subject"
+                                    formControlName="subject" placeholder="Your subject"
+                                    [ngClass]="{ 'is-invalid': submitted && f['subject'].errors }">
+                                    <div *ngIf="submitted && f['subject'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['subject'].errors['required']">Subject is required</div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-md-12 form-group mb-3">
+                                <label for="message" class="col-form-label">Message *</label>
+                                <textarea class="form-control" name="message" id="message" formControlName="message"
+                                    cols="30" rows="4" placeholder="Write your message"
+                                    [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"></textarea>
+                                    <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['message'].errors['required']">Message is required</div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-5 form-group text-center">
+                                <input type="submit" value="Send Message"
+                                    class="btn btn-block btn-primary rounded-0 py-2 px-4" (click)="saveForm()">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
