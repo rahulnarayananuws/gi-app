@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Contact } from '../models/contact'
 import { ContactService } from '../services/contact.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-landing',
@@ -14,7 +15,7 @@ export class LandingComponent implements OnInit {
   submitted = false;
   companies!: Contact[];
   currentContact!: Contact;
-  constructor(private fb: FormBuilder, private contactService: ContactService) { }
+  constructor(private fb: FormBuilder, private contactService: ContactService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.initMyForm();
@@ -47,6 +48,11 @@ export class LandingComponent implements OnInit {
     };
       this.contactService.SaveMyContact(cotactObj).subscribe(res => {
         this.clearForm();
+        this.toastr.success('Success', 'Data Submitted Successfully');
+      }, err => {
+        this.toastr.error('everything is broken', 'Major Error', {
+          timeOut: 1000,
+        });
       });
     }
 
