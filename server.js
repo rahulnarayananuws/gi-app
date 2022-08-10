@@ -22,14 +22,14 @@ const app = express();
 const router = jsonServer.router("db.json");
 const PORT = process.env.PORT || 3000;
 
-app.use("/", express.static("build"), router);
+app.use(express.static(__dirname + "/dist/gi-app"))
 
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('dist/gi-app'));
 }
 
 app.get('*', (request, response) => {
-	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+	response.sendFile(path.join(__dirname, 'dist/gi-app', 'index.html'));
 });
 
 app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
