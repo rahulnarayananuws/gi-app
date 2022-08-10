@@ -5,10 +5,10 @@ import { ErrorComponent } from './error/error.component';
 import { LandingComponent } from './landing/landing.component';
 
 const routes: Routes = [
-  {path: '', component: EmailerComponent}, 
-  {path: 'emailer', component: EmailerComponent},
-  {path: 'landing', component: LandingComponent},
-  {path: '**', component: ErrorComponent}
+  { path: 'emailer', component: EmailerComponent },
+  { path: '', redirectTo: 'emailer', pathMatch: 'full' },
+  { path: 'landing', component: LandingComponent },
+  { path: '**', component: ErrorComponent }
 ];
 
 @NgModule({
